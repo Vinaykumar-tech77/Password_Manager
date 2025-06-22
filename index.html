@@ -7,22 +7,18 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
-        <title>Password-Manager</title>
+        <title>Password_Manager</title>
 </head>
 <body>
         <nav>
             <div class="logo">Password_Manager</div>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-            </ul>
         </nav>
         <div class="container">
             <h1>Welcome To Password Manager</h1>
             <p>Safely store, manage, and access all your passwords in one secure place.
 Your privacy is our top priority – let’s make security simple and smart.</p>
             <h2>Your Passwords</h2>
+            <p class="alert">Sucessfully Copied !</p>
             <table>
                 <tr>
                     <th>Platform</th>
@@ -34,12 +30,25 @@ Your privacy is our top priority – let’s make security simple and smart.</p>
             <h2>Add New Password</h2>
             <form action="/submit" method="post">
 
+                <label for="platform">Platform:</label>
+                <input type="text" id="platform" name="platform" required>
+                <br><br>
+
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
                 <br><br>
-            
-                <label for="password">Password:</label>
-                <input type="text" id="password" name="password" required>
+
+                <label for="password">Password:
+                <input type="text" id="password" placeholder="Enter password Manually" />
+                </label>
+                <br/>
+            </br>
+                <label>Generate Password
+                <input type="checkbox" id="useGenerated" onchange="togglePasswordInput()" />
+                </label>
+                <button type="button" id="generateBtn" onclick="generatePassword()" style="display: none;" class="btnn">
+                Generate Secure Password
+                </button>
                 <br>
                 <br>
                 <input type="submit" value="Submit" class="btn">
