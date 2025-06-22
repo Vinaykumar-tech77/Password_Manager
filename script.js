@@ -116,7 +116,7 @@ document.querySelector(".btn").addEventListener("click", (e)=>{
     else{
         let json = JSON.parse(localStorage.getItem("passwords"))
         json.push({platform:platform.value,username:username.value,password:password.value})
-        alert("Cerdentials Saved!!!")
+        alert("Credentials Saved!!!")
         localStorage.setItem("passwords",JSON.stringify(json))
     }
     showPasswords()
